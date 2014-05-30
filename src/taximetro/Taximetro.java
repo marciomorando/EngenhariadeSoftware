@@ -8,7 +8,7 @@ public class Taximetro {
     private double valorTotalDeslocamento; // valor total do deslocamento
  
     public Taximetro(){
-        
+      
     }
 
     public void zerarTaximetro(){
@@ -16,15 +16,22 @@ public class Taximetro {
     }
 
     public double calcularValorTotal(){
-       return this.valorTotalDeslocamento = (this.kmRodados * TAXA_POR_KM_RODADO) + VALOR_MINIMO;
+       
+       return (this.kmRodados * TAXA_POR_KM_RODADO) + VALOR_MINIMO;
     }
 
     public void registrarKmRodados(double kmRodados){
         this.kmRodados = kmRodados;
+        this.valorTotalDeslocamento += this.calcularValorTotal();
     }
     
     public double getKmRodados(){
         return(this.kmRodados);
     }
+    
+    public double CalcularFaturamentoDiario(){
+        return valorTotalDeslocamento;
+    }
+    
    
 }

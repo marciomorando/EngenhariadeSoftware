@@ -7,6 +7,7 @@ import javax.swing.JOptionPane;
 public class Taxi {
   
     private Taximetro taximetro;
+   
 
     public Taxi() {
         taximetro = new Taximetro();
@@ -32,6 +33,13 @@ public class Taxi {
             return 0;
         }    
     }
+    
+    public double CalcularFatDiario(){
+        return taximetro.CalcularFaturamentoDiario();
+    }
+    
+   
+    
 
     public static void main(String args[]){
         Taxi tx = new Taxi();
